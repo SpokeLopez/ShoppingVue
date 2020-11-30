@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="estilos.css">
+    <title>Listado de items en Vue</title>
+</head>
+<body>
+    <!-- Formulario de items -->
+<div id="lista-compras">
+    <div class="nes-container with-title is-centered">
+        <p class="title">{{ titulo }}</p>
+        <div class="frm">
+            <div class="nes-field">
+                <p class="nes-balloon from-left nes-pointer">
+                    {{ numCaracteres }} / 50
+                </p>
+                <input type="text" id="add" class="nes-input" v-model="newItem" @keyup.enter="addItem"placeholder="Agregar nuevo item ...">
+            </div>
+            <button type="button" :disabled="newItem.length === 0" class="nes-btn is-primary" @click="addItem">Agregar </button>
+        </div>
+    </div>
+    <!-- Lista de items -->
+    <div class="nes-container is-dark is-centered">
+        <p class="title" v-if="utiles.length === 0">No existen items... <i class="nes-mario"></i></p>
+        <div class="items">
+            <ul class="nes-list is-disc">
+                <li v-for="util in utiles" :class="{complete : estado}" @click="complete">{{util}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</html>

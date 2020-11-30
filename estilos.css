@@ -1,0 +1,19 @@
+#lista-compras{
+    padding: 50px;  
+    display: flex;
+}
+.nes-container{
+    margin: 0 auto;
+    width: 800px;
+}
+.nes-container p{
+    margin-top: 10px;
+    color: crimson;
+}
+.frm .nes-field{
+    margin: 30px;
+}
+.nes-container .complete{
+    text-decoration: line-through;
+    color: chartreuse;
+}
